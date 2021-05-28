@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "130011176182",
+    "project_id": "arunika-b21-cap0049",
+    "storage_bucket": "arunika-b21-cap0049.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130011176182:android:55e7a81da624cfa639e0d7",
+        "android_client_info": {
+          "package_name": "com.example.temuin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130011176182-v7sougc7jjeou4fjuai2kf2g7mu371lr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.temuin",
+            "certificate_hash": "1a57e4183bbbcd9935a42129cfa8ccb563e385cb"
+          }
+        },
+        {
+          "client_id": "130011176182-7484t88pqbvle4anbdfjqibqsg1ncela.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBotIYCFxEvRSVYrjiZR2dhS6iUrKMgTuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130011176182-7484t88pqbvle4anbdfjqibqsg1ncela.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
