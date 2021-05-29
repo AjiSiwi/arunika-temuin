@@ -9,4 +9,19 @@
     <string name="full_name">Full Name</string>
     <string name="gender">Gender</string>
     <string name="alredy_have_an_account">Alredy Have an Account?</string>
+    <string name="question">Test the quality of parts before shipment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="riasec_instruction">The following items were rated on a 1-5 scale of how much they would like to perform that task, with the labels 1=Dislike, 3=Neutral, 5=Enjoy.</string>
+    <string name="next">NEXT</string>
+    <string name="tipi_instruction">Hint:
+        <br>1 = Disagree strongly</br>
+        <br>2 = Disagree moderately</br>
+        <br>3 = Disagree a little</br>
+        <br>4 = Neither agree nor disagree</br>
+        <br>5 = Agree a little</br>
+        <br>6 = Agree moderately</br>
+        <br>7 = Agree strongly</br></string>
+    <string name="submit">Submit</string>
+    <string name="back">Back</string>
 </resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_item_question_riasec"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:cardMaxElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/question"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/tv_question"
+            app:layout_constraintStart_toStartOf="@+id/tv_question"
+            app:layout_constraintTop_toBottomOf="@+id/tv_question">
+
+            <RadioButton
+                android:id="@+id/rb_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:onClick="onRadioButtonClicked"
+                android:text="1"
+                android:layout_marginHorizontal="2dp"/>
+
+            <RadioButton
+                android:id="@+id/rb_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:onClick="onRadioButtonClicked"
+                android:text="2"
+                android:layout_marginHorizontal="2dp"/>
+
+            <RadioButton
+                android:id="@+id/rb_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:onClick="onRadioButtonClicked"
+                android:text="3"
+                android:layout_marginHorizontal="2dp"/>
+
+            <RadioButton
+                android:id="@+id/rb_four"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:onClick="onRadioButtonClicked"
+                android:text="4"
+                android:layout_marginHorizontal="2dp"/>
+
+            <RadioButton
+                android:id="@+id/rb_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:onClick="onRadioButtonClicked"
+                android:text="5"
+                android:layout_marginHorizontal="2dp"/>
+
+            <RadioButton
+                android:id="@+id/rb_six"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:onClick="onRadioButtonClicked"
+                android:text="6"
+                android:layout_marginHorizontal="2dp"/>
+
+            <RadioButton
+                android:id="@+id/rb_seven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:onClick="onRadioButtonClicked"
+                android:text="7"
+                android:layout_marginHorizontal="2dp"/>
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
