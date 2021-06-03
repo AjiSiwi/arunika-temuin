@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/Full_Name"
+        android:id="@+id/etFullName"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
@@ -42,7 +42,7 @@
         tools:ignore="Autofill,TextFields" />
 
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/etEmail"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
@@ -51,30 +51,30 @@
         android:drawablePadding="10dp"
         android:hint="@string/email"
         android:inputType="text"
-
         android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/Full_Name"
-        app:layout_constraintStart_toStartOf="@+id/Full_Name"
-        app:layout_constraintTop_toBottomOf="@+id/Full_Name"
+        app:layout_constraintEnd_toEndOf="@+id/etFullName"
+        app:layout_constraintStart_toStartOf="@+id/etFullName"
+        app:layout_constraintTop_toBottomOf="@+id/etFullName"
         tools:ignore="Autofill,TextFields" />
 
     <EditText
-        android:id="@+id/Password"
+        android:id="@+id/etPassword"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/bg_edit_text"
         android:drawableStart="@drawable/ic_baseline_lock_24"
         android:drawablePadding="10dp"
+        android:inputType="textPassword"
         android:hint="@string/password"
         android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/Email"
-        app:layout_constraintStart_toStartOf="@+id/Email"
-        app:layout_constraintTop_toBottomOf="@+id/Email"
+        app:layout_constraintEnd_toEndOf="@+id/etEmail"
+        app:layout_constraintStart_toStartOf="@+id/etEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
         tools:ignore="Autofill,TextFields" />
 
     <EditText
-        android:id="@+id/Gender"
+        android:id="@+id/etGender"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
@@ -84,24 +84,24 @@
         android:hint="@string/gender"
         android:inputType="text"
         android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/Password"
-        app:layout_constraintStart_toStartOf="@+id/Password"
-        app:layout_constraintTop_toBottomOf="@+id/Password"
+        app:layout_constraintEnd_toEndOf="@+id/etPassword"
+        app:layout_constraintStart_toStartOf="@+id/etPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
         tools:ignore="Autofill,TextFields" />
 
 
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/bg_btn"
         android:text="@string/register"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/Gender"
-        app:layout_constraintStart_toStartOf="@+id/Gender"
-        app:layout_constraintTop_toBottomOf="@+id/Gender" />
+        app:layout_constraintEnd_toEndOf="@+id/etGender"
+        app:layout_constraintStart_toStartOf="@+id/etGender"
+        app:layout_constraintTop_toBottomOf="@+id/etGender" />
 
     <TextView
         android:id="@+id/textView2"
@@ -114,7 +114,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_register"
         app:layout_constraintVertical_bias="0.592" />
 
     <TextView
