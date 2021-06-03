@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var auth: FirebaseAuth
+    private val auth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +27,10 @@ class LoginActivity : AppCompatActivity() {
             if (email.isEmpty()){
                 binding.etEmail.error = "Email Salah"
                 binding.etEmail.requestFocus()
-                return@setOnClickListener
             }
             if (password.isEmpty()){
                 binding.etPassword.error = "Silahkan Mengisi password"
                 binding.etPassword.requestFocus()
-                return@setOnClickListener
             }
             else{
                 loginRegisteredUser(email.toString(), password.toString())
@@ -44,9 +42,14 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 if (it.isSuccessful){
                     Toast.makeText(this, "Login Successfully", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(this@LoginActivity, it.exception?.message, Toast.LENGTH_SHORT).show()
                 }
+                else{
+                    Toast.makeText(this, "There's no Account Registered", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+            .addOnFailureListener {
+                     Toast.makeText(this@LoginActivity, it.message, Toast.LENGTH_SHORT).show()
             }
     }
 }
