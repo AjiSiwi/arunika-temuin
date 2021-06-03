@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.temuin.databinding.ActivitySplashBinding
 import com.example.temuin.ui.login.LoginActivity
+import com.example.temuin.ui.survey.SurveyActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -16,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, SurveyActivity::class.java))
             finish()
         }, 2000)
     }

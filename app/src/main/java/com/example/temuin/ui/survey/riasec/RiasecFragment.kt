@@ -1,60 +1,78 @@
 package com.example.temuin.ui.survey.riasec
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.temuin.R
+import com.example.temuin.data.QuestionsEntity
+import com.example.temuin.databinding.FragmentRiasecBinding
+import com.example.temuin.ui.survey.tipi.TipiFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class RiasecFragment : Fragment(){
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RiasecFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class RiasecFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var fragmentRiasecBinding: FragmentRiasecBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        fragmentRiasecBinding = FragmentRiasecBinding.inflate(layoutInflater, container, false)
+        return fragmentRiasecBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (activity != null){
+            val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[RiasecViewModel::class.java]
+            val questions = viewModel.getQuestions()
+
+
+
+            val riasecAdapter = RiasecAdapter()
+            riasecAdapter.setQuestions(questions)
+
+            with(fragmentRiasecBinding.rvQuestions){
+                layoutManager = LinearLayoutManager(context)
+                setHasFixedSize(true)
+                adapter = riasecAdapter
+            }
+
+            fragmentRiasecBinding.btnNext.setOnClickListener{
+                val mTipiFragment = TipiFragment()
+                val mlist = addAnswer(questions)
+                val mBundle = Bundle()
+
+                mBundle.putIntegerArrayList(TipiFragment.EXTRA_ANSWER, mlist)
+                mTipiFragment.arguments = mBundle
+
+                requireActivity().supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.frame_container, mTipiFragment, TipiFragment::class.java.simpleName)
+                    commit()
+                    Log.d(TAG, mlist.toString())
+
+                }
+            }
+
+
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_riasec, container, false)
+    private fun addAnswer(questions: List<QuestionsEntity>): ArrayList<Int> {
+        val listAnswer : ArrayList<Int> = ArrayList()
+
+        for (i in 0..questions.size-1){
+            listAnswer.add(questions[i].answer)
+        }
+
+        return listAnswer
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RiasecFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RiasecFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

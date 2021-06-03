@@ -1,60 +1,83 @@
 package com.example.temuin.ui.survey.tipi
 
+import android.content.ContentValues
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.temuin.R
+import com.example.temuin.data.QuestionsEntity
+import com.example.temuin.databinding.FragmentRiasecBinding
+import com.example.temuin.databinding.FragmentTipiBinding
+import com.example.temuin.ui.survey.riasec.RiasecAdapter
+import com.example.temuin.ui.survey.riasec.RiasecFragment
+import com.example.temuin.ui.survey.riasec.RiasecViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [TipiFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TipiFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private lateinit var fragmentTipiBinding: FragmentTipiBinding
+
+    companion object{
+        var EXTRA_ANSWER = "extra_answer"
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tipi, container, false)
+        fragmentTipiBinding = FragmentTipiBinding.inflate(layoutInflater, container, false)
+        return fragmentTipiBinding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TipiFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TipiFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (activity != null && arguments != null) {
+            val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[TipiViewModel::class.java]
+            val questions = viewModel.getQuestions()
+            val listRiasec = arguments?.getIntegerArrayList(EXTRA_ANSWER)
+            val listMerged = ArrayList<Int>()
+
+            val tipiAdapter = TipiAdapter()
+            tipiAdapter.setQuestions(questions)
+
+            with(fragmentTipiBinding.rvQuestions) {
+                layoutManager = LinearLayoutManager(context)
+                setHasFixedSize(true)
+                adapter = tipiAdapter
+            }
+
+            fragmentTipiBinding.btnBack.setOnClickListener{
+                val mRiasecFragment = RiasecFragment()
+                requireActivity().supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.frame_container, mRiasecFragment)
+                    commit()
                 }
             }
+
+            fragmentTipiBinding.btnSubmit.setOnClickListener {
+                val mList = addAnswer(questions)
+
+                listMerged.addAll(listRiasec!!)
+                listMerged.addAll(mList)
+
+                Log.d(ContentValues.TAG, listMerged.toString())
+            }
+
+        }
+    }
+
+    private fun addAnswer(questions: List<QuestionsEntity>): ArrayList<Int> {
+        val listAnswer : ArrayList<Int> = ArrayList()
+
+        for (i in 0..questions.size-1){
+            listAnswer.add(questions[i].answer)
+        }
+
+        return listAnswer
     }
 }
