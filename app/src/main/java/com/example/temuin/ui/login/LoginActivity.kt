@@ -52,4 +52,7 @@ class LoginActivity : AppCompatActivity() {
                      Toast.makeText(this@LoginActivity, it.message, Toast.LENGTH_SHORT).show()
             }
     }
+    private fun userLoggedInSuccess(){
+
+    }
 }

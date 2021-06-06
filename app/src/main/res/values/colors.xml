@@ -14,6 +14,6 @@
 
     //colour primary
     <color name="blue">#227C9D</color>
-
+    <color name="secondary_blue">#2EAAD8</color>
     <color name="splash">#F7F7F7</color>
 </resources>
