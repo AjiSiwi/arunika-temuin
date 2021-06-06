@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Temuin">
-        <activity android:name=".ui.survey.SurveyActivity"></activity>
+        <activity android:name=".ui.recommendation.RecommendationActivity"></activity>
+        <activity android:name=".ui.recommendation.RcommendationActivity" />
+        <activity android:name=".ui.survey.SurveyActivity" />
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
