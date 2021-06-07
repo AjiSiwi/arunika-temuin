@@ -6,9 +6,6 @@ import com.example.temuin.databinding.ItemEventBinding
 
 class DetailComAdapter: RecyclerView.Adapter<DetailComAdapter.CommunityDetailViewHolder>() {
 
-
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommunityDetailViewHolder {
         TODO("Not yet implemented")
     }
