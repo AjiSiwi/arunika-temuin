@@ -30,7 +30,7 @@
     <string name="recommend_community">Komunitas Untukmu</string>
     <string name="community_name">Nama Komunitas</string>
     <string name="community_desc">Diskripsi personality Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</string>
-    <string name="join" />
-    <string name="image_comunity" />
-    <string name="nama_komunitas" />
+    <string name="join">JOIN</string>
+    <string name="event_name">Event_Name</string>
+    <string name="event_description">Diskripsi personality Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</string>
 </resources>

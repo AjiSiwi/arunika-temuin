@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:width="295dp"
     android:height="1dp"
-    android:viewportWidth="295"
-    android:viewportHeight="1"
+    android:viewportWidth="100"
+    android:viewportHeight="0.5"
     tools:ignore="VectorRaster">
 
     <group>
