@@ -5,5 +5,5 @@ data class UserEntity(
     val fullName:String ="",
     val password:String = "",
     val email:String ="",
-    val gender:String =""
+
 )

@@ -24,7 +24,6 @@ class RegisterActivity : AppCompatActivity() {
         val fullName = binding.etFullName.text
         val email = binding.etEmail.text
         val password = binding.etPassword.text
-        val gender = binding.etGender.text
 
         binding.btnRegister.setOnClickListener {
             if (fullName.isEmpty()){
@@ -42,11 +41,7 @@ class RegisterActivity : AppCompatActivity() {
                 binding.etPassword.requestFocus()
                 return@setOnClickListener
             }
-            if (gender.isEmpty()){
-                binding.etGender.error = "Gender Tidak Boleh Kosong"
-                binding.etGender.requestFocus()
-                return@setOnClickListener
-            }
+
             else{
                 registerUser(email.toString(), password.toString())
             }
@@ -69,7 +64,6 @@ class RegisterActivity : AppCompatActivity() {
                         binding.etFullName.text.toString(),
                         binding.etPassword.text.toString(),
                         binding.etEmail.text.toString(),
-                        binding.etGender.text.toString(),
                     )
                     Firestore().registerUser(this, user)
 

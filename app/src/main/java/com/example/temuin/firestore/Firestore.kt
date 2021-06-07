@@ -34,24 +34,24 @@ class Firestore {
         return currentUserID
     }
 
-    fun getUserDetails(activity: Activity){
-        mFireStore.collection(Constant.USERS)
-            .document(getCurrentUserID())
-            .get()
-            .addOnSuccessListener { document ->
-                Log.i(activity.javaClass.simpleName, document.toString())
-
-                val user = document.toObject(UserEntity::class.java)
-
-                when(activity){
-                    is LoginActivity ->{
-                        activity.userLoggedInSuccess(user)
-                    }
-                }
-
-            }
-            .addOnFailureListener {
-                Log.e(activity.javaClass.simpleName, "Gagal Meregistrasi User")
-            }
-    }
+//    fun getUserDetails(activity: Activity){
+//        mFireStore.collection(Constant.USERS)
+//            .document(getCurrentUserID())
+//            .get()
+//            .addOnSuccessListener { document ->
+//                Log.i(activity.javaClass.simpleName, document.toString())
+//
+//                val user = document.toObject(UserEntity::class.java)
+//
+//                when(activity){
+//                    is LoginActivity ->{
+//                        activity.userLoggedInSuccess(user)
+//                    }
+//                }
+//
+//            }
+//            .addOnFailureListener {
+//                Log.e(activity.javaClass.simpleName, "Gagal Meregistrasi User")
+//            }
+//    }
 }

@@ -73,23 +73,6 @@
         app:layout_constraintTop_toBottomOf="@+id/etEmail"
         tools:ignore="Autofill,TextFields" />
 
-    <EditText
-        android:id="@+id/etGender"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/bg_edit_text"
-        android:drawableStart="@drawable/gender_male_female"
-        android:drawablePadding="10dp"
-        android:hint="@string/gender"
-        android:inputType="text"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/etPassword"
-        app:layout_constraintStart_toStartOf="@+id/etPassword"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword"
-        tools:ignore="Autofill,TextFields" />
-
-
 
     <Button
         android:id="@+id/btn_register"
@@ -99,9 +82,10 @@
         android:background="@drawable/bg_btn"
         android:text="@string/register"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/etGender"
-        app:layout_constraintStart_toStartOf="@+id/etGender"
-        app:layout_constraintTop_toBottomOf="@+id/etGender" />
+        app:layout_constraintEnd_toEndOf="@+id/etPassword"
+        app:layout_constraintStart_toStartOf="@+id/etPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
 
     <TextView
         android:id="@+id/textView2"
