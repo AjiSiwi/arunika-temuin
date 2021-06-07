@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Temuin">
         <activity android:name=".ui.recommendation.RecommendationActivity"></activity>
-        <activity android:name=".ui.recommendation.RcommendationActivity" />
+        <activity android:name=".ui.detailComunity.DetailComActivity" />
         <activity android:name=".ui.survey.SurveyActivity" />
         <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
