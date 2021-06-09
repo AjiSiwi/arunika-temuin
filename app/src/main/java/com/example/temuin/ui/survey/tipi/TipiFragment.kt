@@ -1,21 +1,26 @@
 package com.example.temuin.ui.survey.tipi
 
-import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.temuin.R
+import com.example.temuin.api.RetrofitClient
 import com.example.temuin.data.QuestionsEntity
-import com.example.temuin.databinding.FragmentRiasecBinding
+import com.example.temuin.data.model.SurveyRequest
+import com.example.temuin.data.model.SurveyResponse
 import com.example.temuin.databinding.FragmentTipiBinding
-import com.example.temuin.ui.survey.riasec.RiasecAdapter
+import com.example.temuin.ui.recommendation.RecommendationActivity
+import com.example.temuin.ui.recommendation.RecommendationActivity.Companion.EXTRA_TYPE
 import com.example.temuin.ui.survey.riasec.RiasecFragment
-import com.example.temuin.ui.survey.riasec.RiasecViewModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class TipiFragment : Fragment() {
 
@@ -29,7 +34,7 @@ class TipiFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         fragmentTipiBinding = FragmentTipiBinding.inflate(layoutInflater, container, false)
         return fragmentTipiBinding.root
     }
@@ -65,7 +70,9 @@ class TipiFragment : Fragment() {
                 listMerged.addAll(listRiasec!!)
                 listMerged.addAll(mList)
 
-                Log.d(ContentValues.TAG, listMerged.toString())
+                fragmentTipiBinding.progBar.visibility = View.VISIBLE
+
+                reqApi(listMerged)
             }
 
         }
@@ -74,10 +81,40 @@ class TipiFragment : Fragment() {
     private fun addAnswer(questions: List<QuestionsEntity>): ArrayList<Int> {
         val listAnswer : ArrayList<Int> = ArrayList()
 
-        for (i in 0..questions.size-1){
-            listAnswer.add(questions[i].answer)
+        for (element in questions){
+            listAnswer.add(element.answer)
         }
 
         return listAnswer
+    }
+
+    private fun reqApi(listValue: ArrayList<Int>){
+        var communityType: String
+
+        val surveyValue = SurveyRequest()
+            surveyValue.input = listValue
+
+            RetrofitClient.apiInstance
+                .predictCommunity(surveyValue)
+                .enqueue(object : Callback<SurveyResponse> {
+                    override fun onResponse(
+                        call: Call<SurveyResponse>,
+                        response: Response<SurveyResponse>
+                    ) {
+                        if (response.isSuccessful){
+                            val value = response.body()
+                            communityType = value!!.type
+
+                            val intent = Intent(activity, RecommendationActivity::class.java)
+                            intent.putExtra(EXTRA_TYPE, communityType)
+                            startActivity(intent)
+                            activity?.finish()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<SurveyResponse>, t: Throwable) {
+                        Log.d("Failure", t.message.toString())
+                    }
+                })
     }
 }

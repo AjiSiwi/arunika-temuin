@@ -12,22 +12,19 @@
     <string name="question">Test the quality of parts before shipment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="riasec_instruction">The following items were rated on a 1-5 scale of how much they would like to perform that task, with the labels 1=Dislike, 3=Neutral, 5=Enjoy.</string>
+    <string name="riasec_instruction">Pilih jawaban yang menggambarkan diri anda dalam skala 1 sampai 5. 1 adalah tidak sesuai dan 5 adalah sangat sesuai.</string>
     <string name="next">NEXT</string>
-    <string name="tipi_instruction">Petunjuk:
-        <br>1 = Sangat tidak setuju</br>
-        <br>2 = Tidak setuju</br>
-        <br>3 = Sedikit tidak setuju</br>
-        <br>4 = Ragu-ragu</br>
-        <br>5 = Sedikit setuju</br>
-        <br>6 = Setuju</br>
-        <br>7 = Sangat setuju</br></string>
+    <string name="tipi_instruction">Pilih jawaban yang menggambarkan diri anda dalam skala 1 sampai 7. 1 adalah sangat tidak setuju dan 5 adalah sangat setuju.</string>
     <string name="submit">Submit</string>
     <string name="back">Back</string>
-    <string name="personality">Personality</string>
+    <string name="personality">Kategori Komunitas</string>
     <string name="dummy_personality">ENFP - Campaigner</string>
     <string name="dummy_desc_personality">"Diskripsi personality Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud "</string>
     <string name="recommend_community">Komunitas Untukmu</string>
     <string name="community_name">Nama Komunitas</string>
     <string name="community_desc">Diskripsi personality Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</string>
+    <string name="empty">Kolom tidak boleh kosong</string>
+    <string name="reg_success">Registrasi Telah Berhasil</string>
+    <string name="log_success">Login Berhasil</string>
+    <string name="log_failed">User Tidak Ditemukan / Informasi Salah</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.temuin.model
+package com.example.temuin.data.model
 
 data class User(
     val uId:String = "",

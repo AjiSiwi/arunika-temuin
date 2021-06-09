@@ -1,14 +1,7 @@
 package com.example.temuin.ui.survey.riasec
 
-import android.content.ContentValues.TAG
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.temuin.R
 import com.example.temuin.data.QuestionsEntity

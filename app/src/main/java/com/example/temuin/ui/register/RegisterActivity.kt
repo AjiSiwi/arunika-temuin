@@ -1,12 +1,14 @@
 package com.example.temuin.ui.register
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.temuin.R
+import com.example.temuin.data.model.User
 import com.example.temuin.databinding.ActivityRegisterBinding
 import com.example.temuin.firestore.Firestore
-import com.example.temuin.model.User
 import com.example.temuin.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -29,26 +31,27 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener {
             if (fullName.isEmpty()){
-                binding.etFullName.error = "Nama Tidak Boleh Kosong"
+                binding.etFullName.error = getText(R.string.empty)
                 binding.etFullName.requestFocus()
                 return@setOnClickListener
             }
             if (email.isEmpty()){
-                binding.etEmail.error = "Email Tidak Boleh Kosong"
+                binding.etEmail.error = getText(R.string.empty)
                 binding.etEmail.requestFocus()
                 return@setOnClickListener
             }
             if (password.isEmpty()){
-                binding.etPassword.error = "Password Tidak Boleh Kosong"
+                binding.etPassword.error = getText(R.string.empty)
                 binding.etPassword.requestFocus()
                 return@setOnClickListener
             }
             if (gender.isEmpty()){
-                binding.etGender.error = "Gender Tidak Boleh Kosong"
+                binding.etGender.error = getText(R.string.empty)
                 binding.etGender.requestFocus()
                 return@setOnClickListener
             }
             else{
+                binding.progBar.visibility = View.VISIBLE
                 registerUser(email.toString(), password.toString())
             }
         }
@@ -73,17 +76,20 @@ class RegisterActivity : AppCompatActivity() {
                     )
                     Firestore().registerUser(this, user)
 
-                    Toast.makeText(this, "Register Telah Berhasil", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.reg_success, Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
                     startActivity(intent)
-
+                    binding.progBar.visibility = View.GONE
                 }
                 else{
+                    binding.progBar.visibility = View.GONE
                     Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
     }
+
     fun userRegistrationSuccess(){
-        Toast.makeText(this, "Register Telah Berhasil", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, R.string.reg_success, Toast.LENGTH_SHORT).show()
+        binding.progBar.visibility = View.GONE
     }
 }

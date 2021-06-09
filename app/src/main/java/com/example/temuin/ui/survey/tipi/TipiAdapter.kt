@@ -35,7 +35,7 @@ class TipiAdapter : RecyclerView.Adapter<TipiAdapter.QuestionViewHolder>() {
                 tvQuestion.text = questions.question
             }
 
-            binding.radioGroup.setOnCheckedChangeListener{group, checkedId ->
+            binding.radioGroup.setOnCheckedChangeListener{_, checkedId ->
                 var ans = 0
                 when(checkedId){
                     R.id.rb_one -> {

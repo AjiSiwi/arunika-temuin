@@ -1,12 +1,10 @@
 package com.example.temuin.ui.survey.riasec
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.temuin.R
@@ -22,7 +20,7 @@ class RiasecFragment : Fragment(){
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         fragmentRiasecBinding = FragmentRiasecBinding.inflate(layoutInflater, container, false)
         return fragmentRiasecBinding.root
     }
@@ -32,8 +30,6 @@ class RiasecFragment : Fragment(){
         if (activity != null){
             val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[RiasecViewModel::class.java]
             val questions = viewModel.getQuestions()
-
-
 
             val riasecAdapter = RiasecAdapter()
             riasecAdapter.setQuestions(questions)
@@ -55,24 +51,17 @@ class RiasecFragment : Fragment(){
                 requireActivity().supportFragmentManager.beginTransaction().apply {
                     replace(R.id.frame_container, mTipiFragment, TipiFragment::class.java.simpleName)
                     commit()
-                    Log.d(TAG, mlist.toString())
-
                 }
             }
-
-
         }
     }
 
     private fun addAnswer(questions: List<QuestionsEntity>): ArrayList<Int> {
         val listAnswer : ArrayList<Int> = ArrayList()
 
-        for (i in 0..questions.size-1){
-            listAnswer.add(questions[i].answer)
+        for (element in questions){
+            listAnswer.add(element.answer)
         }
-
         return listAnswer
     }
-
-
 }

@@ -1,8 +1,7 @@
 package com.example.temuin.ui.survey
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.example.temuin.R
 import com.example.temuin.databinding.ActivitySurveyBinding
 import com.example.temuin.ui.survey.riasec.RiasecFragment

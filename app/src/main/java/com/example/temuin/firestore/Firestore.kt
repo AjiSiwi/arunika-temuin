@@ -1,7 +1,7 @@
 package com.example.temuin.firestore
 
 import android.util.Log
-import com.example.temuin.model.User
+import com.example.temuin.data.model.User
 import com.example.temuin.ui.register.RegisterActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
