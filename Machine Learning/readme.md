@@ -31,3 +31,6 @@ This dataset consists of 58 answers of RIASEC and TIPI online personality tests,
 
 ## Thread Recommendation
 
+## Model
+You also can use our trained model in [models](https://drive.google.com/drive/folders/1e5nVwyPkOzEI_N4nYqTpA9Hm5LumRrZO?usp=sharing)
+
