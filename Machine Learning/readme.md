@@ -140,7 +140,6 @@ Since our interest is to only distinguish high-quality data apart from the low-q
 Aside from the labels, this dataset consists of 5 entries; ID of the data, title, body, tags, and creation date. Since IDs and creation dates would not help with our classification task, we drop the two entries from the dataset. Tags is also dropped for the consideration that its importance to the model can be ignored.
 
 ### Model Deployment Steps
-1. Text Cleaning
 Our current best model is a DNN trained on the [Term Frequency-Inverse Document Frequency (TF-IDF)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) text vectorized data to learn the features from. Again, you can simply run our code [Threads_classification_DNN_2Class.ipynb](https://github.com/AjiSiwi/arunika-temuin/blob/master/Machine%20Learning/Threads_classification_DNN_2Class.ipynb).
 
 #### Text Cleaning
