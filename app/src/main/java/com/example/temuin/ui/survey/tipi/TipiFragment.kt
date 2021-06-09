@@ -18,6 +18,9 @@ import com.example.temuin.databinding.FragmentTipiBinding
 import com.example.temuin.ui.recommendation.RecommendationActivity
 import com.example.temuin.ui.recommendation.RecommendationActivity.Companion.EXTRA_TYPE
 import com.example.temuin.ui.survey.riasec.RiasecFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -90,8 +93,8 @@ class TipiFragment : Fragment() {
 
     private fun reqApi(listValue: ArrayList<Int>){
         var communityType: String
-
-        val surveyValue = SurveyRequest()
+        CoroutineScope(Dispatchers.IO).launch {
+            val surveyValue = SurveyRequest()
             surveyValue.input = listValue
 
             RetrofitClient.apiInstance
@@ -116,5 +119,7 @@ class TipiFragment : Fragment() {
                         Log.d("Failure", t.message.toString())
                     }
                 })
+        }
+
     }
 }

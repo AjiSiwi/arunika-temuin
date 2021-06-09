@@ -27,4 +27,7 @@
     <string name="reg_success">Registrasi Telah Berhasil</string>
     <string name="log_success">Login Berhasil</string>
     <string name="log_failed">User Tidak Ditemukan / Informasi Salah</string>
+    <string name="join">Join</string>
+    <string name="event_name">Nama Event</string>
+    <string name="event_description">Deskripsi Event</string>
 </resources>
