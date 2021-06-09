@@ -31,6 +31,22 @@ This dataset consists of 58 answers of RIASEC and TIPI online personality tests,
 
 ## Thread Recommendation
 
+### Installation
+Before proceeding to run the codes related to our community recommendation project, please make sure that you have this Python packages installed in your environment:
+* numpy == 1.20.2
+* pandas == 1.1.2
+* tensorflow == 2.3.1
+* scikit_learn == 0.24.2
+* openpyxl == 3.0.7
+
+### Stackoverflow Dataset
+The original dataset can access in [Kaggle](https://www.kaggle.com/imoore/60k-stack-overflow-questions-with-quality-rate). This dataset contain 60,000 Stack Overflow questions from 2016-2020 and classified them into three categories:
+
+- HQ: High-quality posts with a total of 30+ score and without a single edit.
+- LQ_EDIT: Low-quality posts with a negative score, and multiple community edits. However, they still remain open after those changes.
+- LQ_CLOSE: Low-quality posts that were closed by the community without a single edit.
+
+
 ## Model
 You also can use our trained model in [models](https://drive.google.com/drive/folders/1e5nVwyPkOzEI_N4nYqTpA9Hm5LumRrZO?usp=sharing)
 
