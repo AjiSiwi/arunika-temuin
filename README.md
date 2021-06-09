@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/AjiSiwi/arunika-temuin/images/">
-    <img src="https://github.com/AjiSiwi/arunika-temuin/images/logo.png" alt="Logo" width="240" height="240">
+    <img src="https://github.com/AjiSiwi/arunika-temuin/blob/master/images/logo.png" alt="Logo" width="240" height="240">
   </a>
 
   <h3 align="center">TEMU.IN DOCUMENTATION</h3>
@@ -58,6 +58,14 @@ The development of human resources quality, especially the younger generation, i
 2. Provide Community Forum and filter the threads inside based on content usefulness
 
 ## APPLICATION PREVIEW
+
+| <img src="https://github.com/AjiSiwi/arunika-temuin/blob/master/images/apps2.jpeg" alt="SplashScreen"> | <img src="https://github.com/AjiSiwi/arunika-temuin/blob/master/images/apps6.jpeg" alt="Register"> | <img src="https://github.com/AjiSiwi/arunika-temuin/blob/master/images/apps3.jpeg" alt="Login"> |
+| --- | --- | --- |
+| *SplashScreen* | *Register Activity* | *Login Activity* |
+
+| <img src="https://github.com/AjiSiwi/arunika-temuin/blob/master/images/apps4.jpeg" alt="Riasec"> | <img src="https://github.com/AjiSiwi/arunika-temuin/blob/master/images/apps1.jpeg" alt="Tipi"> | <img src="https://github.com/AjiSiwi/arunika-temuin/blob/master/images/apps5.jpeg" alt="Recommendation"> |
+| --- | --- | --- |
+| *Riasec Survey Activity* | *Tipi Survey Activity* | *Community Recommendation Activity* |
 
 ## DEPLOYMENT STEPS
 
