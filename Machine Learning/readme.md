@@ -185,5 +185,6 @@ validation_features.sort_indices()
 With *features* and *validation_features* are the vectorized train and test data, respectively.
 
 ## Model
-You also can use our trained model in [models](https://drive.google.com/drive/folders/1e5nVwyPkOzEI_N4nYqTpA9Hm5LumRrZO?usp=sharing)
-
+You also can use our trained model in [models](https://drive.google.com/drive/folders/1e5nVwyPkOzEI_N4nYqTpA9Hm5LumRrZO?usp=sharing).
+Input for community recommendation: 52 column 
+Input fo threads classification: text
