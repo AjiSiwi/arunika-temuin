@@ -63,3 +63,52 @@ The development of human resources quality, especially the younger generation, i
 
 ## APPLICATION PREVIEW
 
+## Cloud Computing
+
+### Deployment
+  1. Storing Model to GCP cloud storage
+    1. Open gcp console
+    2. Make a cloud storage bucket
+    3. Store .h5 and .pkl model to cloud storage.
+
+  2. Setting Up Virtual Environtment
+    1. Open gcp console
+    2. Open cloud shell terminal
+    3. Setting up pyhton 3 venv:
+      cd your-project
+      python3 -m venv env
+
+		source env/bin/activate
+
+  3. Make Cloud Funtions
+    a. Prediction API
+      1. Go to Cloud Funtions Console
+      2. Create Functions
+        1. Function Name : Up to you, it will be an endpoint
+        2. Region  : asia-southeast2
+        3. HTTP
+          - trigger type: HTTP
+          - Authentication: Allow unauthenticated invocations
+        4. Runtime service account : App Engine
+        5. Memory Allocated: 512 Mib
+        6. Timeout : 90
+        7. Make code functions: 
+
+    b. Get Communities API
+      1. Go to Cloud Funtions Console
+      2. Create Functions
+        1. Function Name : Up to you, it will be an endpoint
+        2. Region  : asia-southeast2
+        3. HTTP
+          - trigger type: HTTP
+          - Authentication: Allow unauthenticated invocations
+        4. Runtime service account : App Engine
+        5. Memory Allocated: 1 Gib
+        6. Timeout : 120
+        7. Make code functions : 
+
+
+
+
+
+
