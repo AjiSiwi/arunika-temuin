@@ -57,4 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, R.string.log_failed, Toast.LENGTH_SHORT).show()
             }
     }
+    private fun userLoggedInSuccess(){
+
+    }
 }
