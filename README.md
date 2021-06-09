@@ -77,13 +77,13 @@ The development of human resources quality, especially the younger generation, i
     3. Setting up pyhton 3 venv:
       cd your-project
       python3 -m venv env
-
-		source env/bin/activate
+      source env/bin/activate
 
   3. Make Cloud Funtions
+
     a. Prediction API
-      1. Go to Cloud Funtions Console
-      2. Create Functions
+      - Go to Cloud Funtions Console
+      - Create Functions
         1. Function Name : Up to you, it will be an endpoint
         2. Region  : asia-southeast2
         3. HTTP
