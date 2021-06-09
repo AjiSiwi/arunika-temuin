@@ -167,9 +167,22 @@ The output of the above code would be as written below.
 'java repeat task every random seconds im already familiar repeating tasks every n seconds using javautiltimer javautiltimertask lets say want print hello world console every random seconds 15 unfortunately im bit rush dont code show far help would apriciated'
 ```
    
-2. TFIDF word feature extraction
-3. Text Classification
+#### Text Vectorization
+This vectorization task is done by using Scikit-Learn's [TfidfVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html). To have the vectorizer fitted on the data and transform it, simply run the code below.
+```
+from sklearn.preprocessing.text import TfidfVectorizer
 
+vectorizer = TfidfVectorizer('english')
+features = vectorizer.fit_transform(clean_text)
+```
+Please do note that in order for the vectorizer object to work well, the input must be an iterable containing string, unicode, or file object. Refer to the documentation attached above to learn more about TfidfVectorizer's parameters and methods.
+
+Once you have done with text cleaning and vectorization, the next thing to do would be to train the model. But before you feed the input, please do note to **run this code below** as doing so would prevent TensorFlow from throwing an error.
+```
+features.sort_indices()
+validation_features.sort_indices()
+```
+With *features* and *validation_features* are the vectorized train and test data, respectively.
 
 ## Model
 You also can use our trained model in [models](https://drive.google.com/drive/folders/1e5nVwyPkOzEI_N4nYqTpA9Hm5LumRrZO?usp=sharing)
