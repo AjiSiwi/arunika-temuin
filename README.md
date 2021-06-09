@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/AjiSiwi/arunika-temuin">
+  <a href="https://github.com/AjiSiwi/arunika-temuin/images">
     <img src="logo.png" alt="Logo" width="240" height="240">
   </a>
 
