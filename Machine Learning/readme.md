@@ -111,12 +111,22 @@ Aside from searching for the best hyperparameters combination possible, this cod
 ## Thread Recommendation
 
 ### Installation
-Before proceeding to run the codes related to our community recommendation project, please make sure that you have this Python packages installed in your environment:
+Before proceeding to run the codes related to our thread recommendation project, please make sure that you have this Python packages installed in your environment:
 * numpy == 1.20.2
 * pandas == 1.1.2
 * tensorflow == 2.3.1
 * scikit_learn == 0.24.2
-* openpyxl == 3.0.7
+* nltk == 3.6.2
+
+Or you can simply run this line in your command prompt:
+```
+pip install -r thread_recommendation_requirements.txt
+```
+Or this line if you use Google Colaboratory/Jupyter Notebook instead:
+```
+!pip install -r thread_recommendation_requirements.txt
+```
+Before running the lines written above please make sure that the file thread_recommendation_requirements.txt is in the current working directory.
 
 ### Stackoverflow Dataset
 The original dataset can access in [Kaggle](https://www.kaggle.com/imoore/60k-stack-overflow-questions-with-quality-rate). This dataset contain 60,000 Stack Overflow questions from 2016-2020 and classified them into three categories:
@@ -125,11 +135,41 @@ The original dataset can access in [Kaggle](https://www.kaggle.com/imoore/60k-st
 - LQ_EDIT: Low-quality posts with a negative score, and multiple community edits. However, they still remain open after those changes.
 - LQ_CLOSE: Low-quality posts that were closed by the community without a single edit.
 
+Since our interest is to only distinguish high-quality data apart from the low-quality ones, we relabel the dataset into only two categories; High Quality (encoded as 0) and Low Quality (encoded as 1).
+
+Aside from the labels, this dataset consists of 5 entries; ID of the data, title, body, tags, and creation date. Since IDs and creation dates would not help with our classification task, we drop the two entries from the dataset. Tags is also dropped for the consideration that its importance to the model can be ignored.
+
 ### Model Deployment Steps
 1. Text Cleaning
+Our current best model is a DNN trained on the [Term Frequency-Inverse Document Frequency (TF-IDF)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) text vectorized data to learn the features from. Again, you can simply run our code [Threads_classification_DNN_2Class.ipynb](https://github.com/AjiSiwi/arunika-temuin/blob/master/Machine%20Learning/Threads_classification_DNN_2Class.ipynb).
+
+#### Text Cleaning
+There are a few steps to be done to clean the data; firstly to remove the remaining HTML tags and then removing all the punctuations and stopwords. For simplicity sake, we use the punctuations and stopwords provided by [Natural Language Toolkit (NLTK)](https://www.nltk.org/). Make sure to run this code beforehand.
+```
+stopwords = nltk.corpus.stopwords
+nltk.download('stopwords')
+nltk.download('punkt')
+```
+Once you have downloaded all the necessary files, the text cleaning process can be done by following this code.
+```
+def text_process(text):
+    pattern = r'</*\w+[\w:/."= ]*>'
+    text = re.sub(pattern, '', text)
+    text = text.translate(str.maketrans(" ", " ", string.punctuation))
+    text = [word.lower() for word in text.split() if word.lower() not in stopwords.words('english')]
+    return " ".join(text)
+
+text = 'Java: Repeat Task Every Random Seconds <p>I\'m already familiar with repeating tasks every n seconds by using Java.util.Timer and Java.util.TimerTask. But lets say I want to print "Hello World" to the console every random seconds from 1-5. Unfortunately I\'m in a bit of a rush and don\'t have any code to show so far. Any help would be apriciated.  </p>\n'
+text_process(text)
+```
+As you can see above, 
+The output of the above code would be as written below.
+```
+'java repeat task every random seconds im already familiar repeating tasks every n seconds using javautiltimer javautiltimertask lets say want print hello world console every random seconds 15 unfortunately im bit rush dont code show far help would apriciated'
+```
    
-3. TFIDF word feature extraction
-4. Text Classification
+2. TFIDF word feature extraction
+3. Text Classification
 
 
 ## Model
