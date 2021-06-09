@@ -16,22 +16,18 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#Background">About The Project</a>
+      <a href="#Background">BACKGROUND</a>
       <ul>
-        <li><a href="#Project Innovation">Built With</a></li>
+        <li><a href="#PROJECT INNOVATION">PROJECT INNOVATION</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#DEPLOYMENT STEPS">DEPLOYMENT STEPS</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#cloud Computing">cloud Computing</a></li>
+        <li><a href="#Machine Learning">Machine Learning</a></li>
       </ul>
     </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
 
@@ -63,9 +59,11 @@ The development of human resources quality, especially the younger generation, i
 
 ## APPLICATION PREVIEW
 
-## Cloud Computing
+## DEPLOYMENT STEPS
 
-### Deployment
+### Cloud Computing
+
+#### Deployment
   1. Storing Model to GCP cloud storage
     1. Open gcp console
     2. Make a cloud storage bucket
@@ -106,6 +104,9 @@ The development of human resources quality, especially the younger generation, i
         5. Memory Allocated: 1 Gib
         6. Timeout : 120
         7. Make code functions : 
+
+  ### Machine Learning
+  Please read [readme.md](https://github.com/AjiSiwi/arunika-temuin/blob/master/Machine%20Learning/readme.md) in Machine Learning Folder
 
 
 
